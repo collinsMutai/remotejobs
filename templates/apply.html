@@ -1,0 +1,92 @@
+{% extends 'base.html'%} {% block title %}Job Applicstion for job {% endblock %}
+{% block content %}
+<div class="container padding-top">
+  <!-- <div class="row">
+    <div class="col-lg-12">
+      <a href="logout"
+        ><button type="submit" class="btn btn-primary">Logout</button>
+      </a>
+    </div>
+  </div> -->
+  <form>
+    <div class="row">
+      <div class="col-5">
+        <input
+          type="text"
+          name="first_name"
+          class="form-control"
+          placeholder="First name"
+        />
+      </div>
+      <div class="col-5">
+        <input
+          type="text"
+          name="last_name"
+          class="form-control"
+          placeholder="Last name"
+        />
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-3">
+        <input
+          type="text"
+          name="phone"
+          class="form-control"
+          placeholder="Phone"
+        />
+      </div>
+      <div class="col-5">
+        <input
+          type="text"
+          name="email"
+          class="form-control"
+          placeholder="Email"
+        />
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-4">
+        <input
+          type="text"
+          name="city"
+          class="form-control"
+          placeholder="City"
+        />
+      </div>
+      <div class="col-4">
+        <input
+          type="text"
+          name="state"
+          class="form-control"
+          placeholder="State"
+        />
+      </div>
+      <div class="col-4">
+        <input type="text" name="zip" class="form-control" placeholder="Zip" />
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-6">
+        <textarea
+          class="form-control"
+          name="cover_letter"
+          id="coverLetter"
+          rows="3"
+          placeholder="Paste Cover Letter"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row mt-5 mb-5">
+      <label for="cv">Upload CV</label>
+      <div class="col-6">
+        <input type="file" name="cv" class="form-control-file" id="cv" />
+      </div>
+    </div>
+
+    <a href="#"
+      ><button type="submit" class="btn btn-primary">Submit</button></a
+    >
+  </form>
+</div>
+{% endblock %}

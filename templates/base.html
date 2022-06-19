@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../static/styles.css" rel="stylesheet" />
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body class="container-fluid bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">RemoteJobs</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="#">For Companies</a>
+            <a class="nav-link" href="#">For Developers</a>
+            <a class="nav-link" href="#"  aria-disabled="true">Community</a>
+          </div>
+        
+        </div>
+        <div class="navbar-nav d-flex justify-content-end">
+         
+          {% if session %}
+          <span class="navbar-text"> <h5>Welcome {{session.name}}!</h5> </span>
+      
+      <a class="nav-link active" aria-current="page" href="/logout"><button type="button" class="btn btn-outline-primary">Logout</button></a>
+      
+
+    
+  {% endif %}
+        </div>
+      </div>
+    </nav>
+    {% block content %} {% endblock %}
+
+
+    <!-- footer -->
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+      <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+          <!-- col -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 text-start">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Remote Jobs
+            </h5>
+            <p>
+              Start building your team with professional remote developers
+              trusted by leading businesses in Europe.
+            </p>
+          </div>
+          <!-- col -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 text-start">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Why Remote Jobs
+            </h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >For Companies
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >For Developers
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Community
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >FAQ
+              </a>
+            </p>
+          </div>
+          <!-- col -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 text-start">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Company
+            </h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Contact
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >About us
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Terms & Conditions
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Privacy Policy
+              </a>
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >Imprint
+              </a>
+            </p>
+          </div>
+          <!-- col -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 text-start">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Contact
+            </h5>
+            <p><i class="fas fa-home mr-3"></i> Litein</p>
+            <p><i class="fas fa-envelope mr-3"></i> jobsremotejobs.com</p>
+            <p><i class="fas fa-phone mr-3"></i> 555-555-555</p>
+            <p><i class="fas fa-print mr-3"></i> +2568 7587 26658</p>
+          </div>
+        </div>
+        <!-- end row -->
+        <hr class="mb-4" />
+        <!-- row -->
+        <div class="row align-items-center">
+          <!-- col -->
+          <div class="col-md-7 col-lg-8">
+            <p>
+              Copyright ©2022 All rights reserved by:
+              <a href="#" style="text-decoration: none"
+                ><strong>Remote Jobs</strong></a
+              >
+            </p>
+          </div>
+          <!-- col -->
+          <div class="col-md-5 col-lg-4">
+            <div class="text-center text-md-right">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

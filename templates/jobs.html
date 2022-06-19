@@ -1,0 +1,27 @@
+{% extends 'base.html'%} {% block title %}Jobs Listing{% endblock %} {% block
+content %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg">
+      <h1 class="font-heading">Remote jobs for developers</h1>
+      <button type="button" class="btn btn-dark">Active</button>
+    </div>
+  </div>
+</div>
+<div class="container padding-top">
+  <div class="card w-100">
+    <div class="card-body">
+      {% for job in jobs %}
+      <h5 class="card-title sub-heading">{{ job.title }}</h5>
+      <p class="card-text">{{ job.city }} 13 days ago</p>
+      <p class="card-text display-inline">ASAP • GMT +02:00</p>
+
+      <a href="/jobs/{{job.id}}" class="btn btn-primary display-inline-button"
+        >View</a
+      >
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

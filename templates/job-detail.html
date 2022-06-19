@@ -1,0 +1,83 @@
+{% extends 'base.html'%}{% block title %}Browse Remote Job{% endblock %} {%
+block content %}
+
+<div class="container">
+  <h5 class="card-title sub-heading">{{ job.title }}</h5>
+  <p class="card-text">{{ job.city }}</p>
+  <div class="d-grid gap-2">
+    <button class="btn btn-dark" type="button">
+      <span class="display-inline" style="text-align: start">40hr/week</span
+      ><span class="display-inline" style="margin-left: 33%">Starts ASAP</span>
+      <span class="display-inline" style="margin-left: 33%">GMT +02:00</span>
+    </button>
+  </div>
+</div>
+<div class="container">
+  <div class="skills">
+    <button class="btn btn-primary" type="submit">AWS</button>
+    <button class="btn btn-primary" type="submit">Java</button>
+    <button class="btn btn-primary" type="submit">Javascript</button>
+    <button class="btn btn-primary" type="submit">Node js</button>
+    <button class="btn btn-primary" type="submit">CSS</button>
+    <button class="btn btn-primary" type="submit">HTML5</button>
+    <button class="btn btn-primary" type="submit">NoSQL</button>
+    <button class="btn btn-primary" type="submit">SQL</button>
+    <button class="btn btn-primary" type="submit">Azure</button>
+    <button class="btn btn-primary" type="submit">Google Cloud</button>
+  </div>
+</div>
+<div class="container">
+  <div class="skills">
+    <h5 class="card-title sub-heading">About us:</h5>
+
+    <p>{{ job.intro}}</p>
+
+    <h5 class="card-title sub-heading">Your tasks:</h5>
+    <ul>
+      <li>Consulting with our clients throughout the entire project process</li>
+      <li>
+        Design and specification of cloud-based CRM and marketing automation
+        solutions in direct exchange with our customers.
+      </li>
+      <li>
+        Development of customer-specific integrations, systems, and product
+        enhancements.
+      </li>
+      <li>
+        Design and specification of customer data architecture (cloud
+        /on-premise / hybrid).
+      </li>
+      <li>
+        Development and configuration of interfaces for the integration of
+        customer data into surrounding systems and platforms.
+      </li>
+    </ul>
+    <h5 class="card-title sub-heading">Your profile:</h5>
+    <ul>
+      {% for i in job.requirements %}
+      <li>{{ i }}</li>
+
+      {% endfor %}
+    </ul>
+    <p>
+      Are you fascinated by the world of marketing technology? Are you looking
+      for a challenging environment with exciting projects and state-of-the-art
+      technologies? we are looking forward to receiving your application.
+    </p>
+  </div>
+</div>
+<div class="container">
+  <div class="d-grid gap-2 col-4">
+    {% if session %}
+    <a href="/apply"
+      ><button class="btn btn-purple" type="button">APPLY NOW</button></a
+    >
+    {% else %}
+    <a href="/login"
+      ><button class="btn btn-purple" type="button">APPLY NOW</button></a
+    >
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
