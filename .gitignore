@@ -4,3 +4,4 @@ env/
 env
 client_secret.json
 config.py
+auth.py

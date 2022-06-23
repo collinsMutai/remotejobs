@@ -51,34 +51,3 @@ class Jobs(db.Model):
         }
 
 
-class Menu(db.Model):
-    __table__name = "menu"
-
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
-    description = Column(String)
-    price = Column(Integer)
-
-    def __init__(self, name, description, price):
-        self.name = name
-        self.description = description
-        self.price = price
-
-    def insert(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def update(self):
-        db.session.commit()
-
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
-
-    def format(self):
-        return {
-            "id": self.id,
-            "name": self.name,
-            "description": self.description,
-            "price": self.price,
-        }
