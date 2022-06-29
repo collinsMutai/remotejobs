@@ -2,6 +2,6 @@ __pycache__/
 .vscode/
 env/
 env
-client_secret.json
-config.py
-auth.py
+/auth.py
+/config.py
+/client_secret.json
