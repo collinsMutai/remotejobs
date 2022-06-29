@@ -1,6 +1,6 @@
+from enum import unique
 from sqlalchemy import Column, String, Integer,  create_engine
 from flask_sqlalchemy import SQLAlchemy
-
 
 database_name = "jobs"
 database_path = "postgresql://{}:{}@{}/{}".format(
@@ -49,5 +49,8 @@ class Jobs(db.Model):
             "city": self.city
             # "date": self.date
         }
+
+
+
 
 

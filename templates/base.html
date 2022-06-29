@@ -37,8 +37,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" href="#">For Companies</a>
-            <a class="nav-link" href="#">For Developers</a>
+            <a class="nav-link" href="#">Register</a>
+            <a class="nav-link" href="#">Login</a>
             <a class="nav-link" href="#"  aria-disabled="true">Community</a>
           </div>
         
@@ -49,15 +49,12 @@
           <span class="navbar-text"> <h5>Welcome {{session.name}}!</h5> </span>
       
       <a class="nav-link active" aria-current="page" href="/logout"><button type="button" class="btn btn-outline-primary">Logout</button></a>
-      
-
     
   {% endif %}
         </div>
       </div>
     </nav>
     {% block content %} {% endblock %}
-
 
     <!-- footer -->
     <footer class="bg-dark text-white pt-5 pb-4 mt-5">

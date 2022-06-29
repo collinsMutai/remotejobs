@@ -9,9 +9,9 @@ content %}
   </div>
 </div>
 <div class="container padding-top">
-  <div class="card w-100">
+  {% for job in jobs %}
+  <div class="card w-100 mb-3">
     <div class="card-body">
-      {% for job in jobs %}
       <h5 class="card-title sub-heading">{{ job.title }}</h5>
       <p class="card-text">{{ job.city }} 13 days ago</p>
       <p class="card-text display-inline">ASAP • GMT +02:00</p>
@@ -19,9 +19,9 @@ content %}
       <a href="/jobs/{{job.id}}" class="btn btn-primary display-inline-button"
         >View</a
       >
-      {% endfor %}
     </div>
   </div>
+  {% endfor %}
 </div>
 
 {% endblock %}

@@ -1,12 +1,9 @@
 import os
-from flask import Flask, redirect, render_template, request, abort, jsonify, session, url_for
+from flask import Flask, redirect, render_template, request, abort, session, url_for
 from flask_cors import CORS
-
-
 from models import setup_db, Jobs
 
 import requests
-import pathlib
 from google_auth_oauthlib.flow import Flow
 from pip._vendor import cachecontrol
 import google.auth.transport.requests
@@ -21,6 +18,7 @@ def create_app(test_config=None):
     app.secret_key = "Collo"
     setup_db(app)
     CORS(app)
+ 
 
     @app.after_request
     def after_request(response):
@@ -64,8 +62,6 @@ def create_app(test_config=None):
         return redirect("/apply")
 
 
-
-
     @app.route("/logout")
     def logout():
         session.clear()
@@ -81,9 +77,6 @@ def create_app(test_config=None):
     def jobs():
         jobs = Jobs.query.all()
 
-     
-        
-
           
         return render_template("jobs.html", jobs=jobs)
 
@@ -94,18 +87,25 @@ def create_app(test_config=None):
         job = Jobs.query.filter_by(id=job_id).first_or_404()
 
 
-        details = {
+        data = [{
+            "title": "Fullstack developer",
             "intro": "The company employs around 30 people in",
             "job_brief": "We are looking for a talented UX Designer to work remotely with a Swiss-based deep-tech company focusing on the autonomization of document extraction through machine learning.",
             "requirements": ["Proven work experience as a UI/UX Designer or similar role",
             "Portfolio of design projects",
-            "Knowledge of wireframe tools (e.g. Wireframe.cc and InVision)"]
+            "Knowledge of wireframe tools (e.g. Wireframe.cc and InVision)"]    
+        },
+        {
+            "title": "Backend developer",
+            "intro": "The company employs around 540 people in",
+            "job_brief": "We are looking for a talented UX Designer to work remotely with a Swiss-based deep-tech company focusing on the autonomization of document extraction through machine learning.",
+            "requirements": ["Proven work experience as a UI/UX Designer or similar role",
+            "Portfolio of design projects",
+            "Knowledge of wireframe tools (e.g. Wireframe.cc and InVision)"]    
+        }]
 
 
-            
-        }
-
-        return render_template("job-detail.html", job=details)
+        return render_template("job-detail.html", job=job, data=data)
 
     @app.route("/apply")
     @login_is_required
@@ -116,9 +116,7 @@ def create_app(test_config=None):
 
         return render_template("/apply.html",  name=session["name"])
         
-        # return "Submit application <a href='/logout'><button>Logout<\button></a>"
-
-
+    
 
     return app
 
